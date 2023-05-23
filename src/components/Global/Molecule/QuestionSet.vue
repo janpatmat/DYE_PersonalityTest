@@ -1,51 +1,78 @@
 <template>
     <div class="container">
-        <h3>{{ question }}</h3>
-    <div class="container__choices">
-
-<Circle classname="never"/>
-<Circle classname="very_rarely"/>
-<Circle classname="rarely"/>
-<Circle classname="frequently"/>
-<Circle classname="very_frequently"/>
-<Circle classname="always"/>
-    </div>
-    <div class="container__indicator">
+      <h3>{{ question }}</h3>
+      <div class="container__choices">
+        <Ncircle :index="1" :selected="selectedComponent === 1" @click="selectComponent(1)" v-bind:class="{ 'selected-component': selectedComponent === 1 }"/>
+        <VRcircle :index="2" :selected="selectedComponent === 2" @click="selectComponent(2)" v-bind:class="{ 'selected-component': selectedComponent === 2 }"/>
+        <Rcircle :index="3" :selected="selectedComponent === 3" @click="selectComponent(3)" v-bind:class="{ 'selected-component': selectedComponent === 3 }"/>
+        <Fcircle :index="4" :selected="selectedComponent === 4" @click="selectComponent(4)" v-bind:class="{ 'selected-component': selectedComponent === 4 }"/>       
+        <VFcircle :index="5" :selected="selectedComponent === 5" @click="selectComponent(5)" v-bind:class="{ 'selected-component': selectedComponent === 5 }" />
+        <Acircle :index="6" :selected="selectedComponent === 6" @click="selectComponent(6)" v-bind:class="{ 'selected-component': selectedComponent === 6 }" />
+        
+      </div>
+      <div class="container__indicator">
         <h3>Never</h3>
         <h3>Always</h3>
+      </div>
     </div>
-</div>
-</template>
+    <hr />
 
-<script>
-import Circle from '../Circle.vue'
-export default {
-components: {
-    Circle,
-},
-props:{
-    question:{
+  </template>
+  
+  <script>
+  import Ncircle from "../CircleChoice/circleNever.vue";
+  import Fcircle from "../CircleChoice/circleFrequently.vue";
+  import VFcircle from "../CircleChoice/circleVF.vue";
+  import VRcircle from "../CircleChoice/circleVR.vue";
+  import Rcircle from "../CircleChoice/circleRarely.vue";
+  import Acircle from "../CircleChoice/circleAlways.vue";
+  
+  export default {
+    components: {
+      Ncircle,
+      Fcircle,
+      Acircle,
+      Rcircle,
+      VFcircle,
+      VRcircle,
+    },
+    data() {
+      return {
+        selectedComponent: null,
+      };
+    },
+    props: {
+      question: {
         type: String,
-        required: true
-    }
-}
-}
-</script>
-
-<style>
-.container{
+        required: true,
+      },
+    },
+    methods: {
+      selectComponent(index) {
+        this.selectedComponent = index;
+        console.log(`clicked ${index}`);
+      },
+    },
+  };
+  </script>
+  
+  <style>
+  .container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
- 
-}
-.container__choices{
+    margin-bottom: 1rem
+  }
+  
+  .container__choices {
     display: flex;
     gap: 1rem;
-}
-.container__indicator{
+  }
+  
+  .container__indicator {
     display: flex;
     gap: 20rem;
-}
-</style>
+  }
+  </style>
+  
