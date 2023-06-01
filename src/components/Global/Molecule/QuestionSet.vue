@@ -1,6 +1,7 @@
 <template>
   <div class="container">
     <h3>{{ question }}</h3>
+    <p>{{ group }}</p>
     <div class="container__choices">
       <Ncircle
         :index="1"
@@ -78,12 +79,17 @@ export default {
       type: Number,
       required: true,
     },
+    group:{
+      type: String,
+      required: true,
+    }
   },
   methods: {
     selectComponent(index) {
       this.selectedComponent = index;
       const selectedText = this.getSelectedComponentText(index);
-      this.$emit("circleSelected", { questionId: this.questionId, selectedText });
+      
+      this.$emit("circleSelected", { questionId: this.questionId, selectedText, group: this.group  });
       console.log(`Clicked index: ${index}`);
     },
     getSelectedComponentText(index) {

@@ -8,11 +8,8 @@
       :group="question.group"
       @circleSelected="accumulateSelectedText"
     />
-    <div v-for="(total, group) in totals" :key="group">
-      Group {{ group }} Total: {{ total }}
-    </div>
-    <button @click="calculateTotals">Calculate Totals</button>
   </div>
+  <button @click="submitFunc" >Hello</button>
 </template>
 
 <script>
@@ -26,8 +23,6 @@ export default {
         { id: 2, question: 'Question 2 (Group A)', group: 'A' },
         { id: 3, question: 'Question 3 (Group B)', group: 'B' }
       ],
-      answerCounts: {},
-      totals: {}
     };
   },
   components: {
@@ -35,22 +30,14 @@ export default {
   },
   methods: {
     accumulateSelectedText({ questionId, selectedText, group }) {
-      if (!this.answerCounts.hasOwnProperty(group)) {
-        this.answerCounts[group] = {};
-      }
-      if (!this.answerCounts[group].hasOwnProperty(questionId)) {
-        this.answerCounts[group][questionId] = 0;
-      }
-      this.answerCounts[group][questionId] += selectedText;
+      console.log('Question ID:', questionId);
+      console.log('Selected Text:', selectedText);
+      console.log('Group:', group);
     },
-    calculateTotals() {
-      this.totals = {};
-      for (const group in this.answerCounts) {
-        const groupAnswerCounts = Object.values(this.answerCounts[group]);
-        const groupTotal = groupAnswerCounts.reduce((sum, value) => sum + value, 0);
-        this.totals[group] = groupTotal;
-      }
-    }
+
+    submitFunc(){
+      this.accumulateSelectedText
+    },
   }
 };
 </script>
