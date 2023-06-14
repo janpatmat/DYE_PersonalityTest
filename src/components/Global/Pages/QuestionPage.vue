@@ -9,7 +9,9 @@
       @circleSelected="accumulateSelectedText"
     />
   </div>
-  <button @click="submitFunc" >Hello</button>
+
+  <div class="submitContainer"> <button @click="submitFunc" class="submitButton" >Submit</button></div>
+ 
 </template>
 
 <script>
@@ -58,7 +60,47 @@ export default {
         {id: 37, question: "37. I give my opinion even if it will not do any good.", group: [9], score: 0, multiplier: -1 },
         {id: 38, question: "38. I don't get to do something because it takes me too long to decide.", group: [1], score: 0, multiplier: -1 },
         {id: 39, question: "39. I do the chores assigned to me.", group: [2,3,5], score: 0, multiplier: 1 },
-        {id: 40, question: "40. I try to fit in by pretending to be someone I'm not.", group: [4,6,9], score: 0, multiplier: 1 },
+        {id: 40, question: "40. I try to fit in by pretending to be someone I'm not.", group: [4,6,9], score: 0, multiplier: -1 },
+        {id: 41, question: "41. I make friends with people I meet.", group: [7], score: 0, multiplier: 1 },
+        {id: 42, question: "42. I complain when the traffic is bad.", group: [2,4], score: 0, multiplier: -1 },
+        {id: 43, question: "43. I say things which I should not.", group: [2,3,5,6], score: 0, multiplier: -1 },
+        {id: 44, question: "44. I respect the point of view of others.", group: [9], score: 0, multiplier: 1 },
+        {id: 45, question: "45. People complain on how I always change my decisions.", group: [1], score: 0, multiplier: -1 },
+        {id: 46, question: "46. When I get annoyed at someone, I talk to people about the bad things that that annoying person does.", group: [2,3,5], score: 0, multiplier: -1 },
+        {id: 47, question: "47. I look down on people who are unpopular.", group: [6,7,9], score: 0, multiplier: -1 },
+        {id: 48, question: "48. My room is orderly.", group: [2,10], score: 0, multiplier: 1 },
+        {id: 49, question: "49. I thank people.", group: [3,5,7], score: 0, multiplier: 1 },
+        {id: 50, question: "50. I do things for others even if it there is nothing in it for me.", group: [1,4], score: 0, multiplier: 1 },
+        {id: 51, question: "51. I need to have certain brands of clothes or gadgets.", group: [2,9], score: 0, multiplier: -1 },
+        {id: 52, question: "52. I mention myself as a good example in conversations.", group: [9], score: 0, multiplier: -1 },
+        {id: 53, question: "53. Before I read a book or watch a movie, I check with a trustworthy source whether it would have a positive or negative effect on me.", group: [1], score: 0, multiplier: 1 },
+        {id: 54, question: "54. When people are saying bad things about my a friend, I try to change the conversation.", group: [3], score: 0, multiplier: 1 },
+        {id: 55, question: "55. I trust people.", group: [5,6], score: 0, multiplier: 1 },
+        {id: 56, question: "56. I admit my mistakes.", group: [4,6], score: 0, multiplier: 1 },
+        {id: 57, question: "57. I get along with people even if I disagree with their ideas.", group: [5,7], score: 0, multiplier: 1 },
+        {id: 58, question: "58. I stand by my principles.", group: [4], score: 0, multiplier: 1 },
+        {id: 59, question: "59. I lose my temper.", group: [2,5], score: 0, multiplier: -1 },
+        {id: 60, question: "60. I visit websites even if I know they would have a negative effect on me.", group: [1,2], score: 0, multiplier: -1 },
+        {id: 61, question: "61. I gossip.", group: [2,3,5,6], score: 0, multiplier: -1 },
+        {id: 62, question: "62. If a friend is planning to do something wrong, I try to talk him out of it.", group: [4,6,8], score: 0, multiplier: 1 },
+        {id: 63, question: "63. I try to understand people who don't share my points of view.", group: [5,7], score: 0, multiplier: 1 },
+        {id: 64, question: "64. I crave for the praise of people.", group: [4,9], score: 0, multiplier: -1 },
+        {id: 65, question: "65. I practice good manners, especially with the opposite sex.", group: [2,5], score: 0, multiplier: 1 },
+        {id: 66, question: "66. I speak badly about myself, so that others may contradict me and mention my good characteristics.", group: [9], score: 0, multiplier: -1 },
+        {id: 67, question: "67. My decisions are easily swayed by peer pressure.", group: [1,2,4], score: 0, multiplier: -1 },
+        {id: 68, question: "68. I hold my tongue in order to respect the private lives of people.", group: [2,3,5,6,8], score: 0, multiplier: 1 },
+        {id: 69, question: "69. People feel comfortable around me.", group: [2,7], score: 0, multiplier: 1 },
+        {id: 70, question: "70. Fear of failure prevents me from doing ambitious things.", group: [4], score: 0, multiplier: -1 },
+        {id: 71, question: "71. I make excuses when I am rebuked.", group: [9], score: 0, multiplier: -1 },
+        {id: 72, question: "72. My decisions depend on my mood.", group: [1], score: 0, multiplier: -1 },
+        {id: 73, question: "73. My mother or father has to force me to study.", group: [2,3,5], score: 0, multiplier: -1 },
+        {id: 74, question: "74. I avoid doing things because they require a lot of effort.", group: [2,4], score: 0, multiplier: -1 },
+        {id: 75, question: "75. I fail to fulfill promises because of inconvenience.", group: [2,3], score: 0, multiplier: -1 },
+        {id: 76, question: "76. I get impatient with people.", group: [2,4], score: 0, multiplier: -1 },
+        {id: 77, question: "77. I make fun of people who are different.", group: [3,5], score: 0, multiplier: -1 },
+        {id: 78, question: "78. I don't get to finish what I start.", group: [4], score: 0, multiplier: -1 },
+        {id: 79, question: "79. I find it hard to say no to people.", group: [4], score: 0, multiplier: -1 },
+        {id: 80, question: "80. My bag is clean and orderly.", group: [4], score: 0, multiplier: 1 },
         
       ],
       x: 0,
@@ -144,4 +186,18 @@ export default {
 
 <style scoped>
 /* Styles */
+.submitButton{
+  background-color: gray;
+  border: 0;
+  padding:0.5rem 2rem;
+  border-radius: 1rem; 
+  font-weight: bold;
+  color:white
+}
+
+.submitContainer{
+  display:flex;
+  align-content: center;
+  justify-content: center;
+}
 </style>
