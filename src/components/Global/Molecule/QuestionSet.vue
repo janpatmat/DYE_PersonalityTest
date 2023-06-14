@@ -1,7 +1,8 @@
 <template>
   <div class="container">
-    <h3>{{ question }}</h3>
-    <p>{{ group }}</p>
+    <div class="questionContainer"><h3>{{ question }}</h3></div>
+    
+    
     <div class="container__choices">
       <Ncircle
         :index="1"
@@ -80,7 +81,11 @@ export default {
       required: true,
     },
     group:{
-      type: String,
+      type: Number,
+      required: true,
+    },
+    score:{
+      type: Number,
       required: true,
     }
   },
@@ -134,5 +139,13 @@ export default {
     display: flex;
     gap: 20rem;
   }
+
+  .questionContainer {
+  display: flex;
+  max-width:50%;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+}
   </style>
   
