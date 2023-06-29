@@ -9,7 +9,7 @@
 
         <div class="tipsContainer">
             <h3>Instruction</h3>
-            <p>For each number below, select how habitual the action is, from never to always.
+            <p>For each number below, select how habitual the action is, from <span class="neg">never, very rarely, rarely,</span> <span class="pos">frequently, very frequently, to always </span>.
             Select the circle of your choice
             Click submit once you have finished
             You can only select <strong>one choice</strong></p>
@@ -33,12 +33,20 @@ export default {
 }
 .tipsContainer{
     border: 1;
-    border-style: solid;
+    
     padding: 0 2rem;
 }
 .container{
     display: flex;
     flex-direction: row;
     gap: 1rem;
+}
+.neg{
+    color: #6464C3;
+    font-weight: bold;
+}
+.pos{
+    color:#368956; 
+    font-weight: bold;
 }
 </style>

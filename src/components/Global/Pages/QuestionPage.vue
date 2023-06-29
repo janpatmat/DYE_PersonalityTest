@@ -100,7 +100,7 @@ export default {
         {id: 77, question: "77. I make fun of people who are different.", group: [3,5], score: 0, multiplier: -1 },
         {id: 78, question: "78. I don't get to finish what I start.", group: [4], score: 0, multiplier: -1 },
         {id: 79, question: "79. I find it hard to say no to people.", group: [4], score: 0, multiplier: -1 },
-        {id: 80, question: "80. My bag is clean and orderly.", group: [4], score: 0, multiplier: 1 },
+        {id: 80, question: "80. My bag is clean and orderly.", group: [10], score: 0, multiplier: 1 },
         
       ],
       x: 0,
@@ -176,10 +176,11 @@ export default {
 
     },
 
-    submitFunc(){
+    // submitFunc(){
       
-      console.log('Group:', this.groups);
-    },
+    //   console.log('Group:', this.groups);
+    //   this.$router.push('/result');
+    // },
   }
 };
 </script>

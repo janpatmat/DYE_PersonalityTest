@@ -1,5 +1,21 @@
-import { createApp } from 'vue'
-import './style.css'
-import App from './App.vue'
+import Vue from 'vue';
+import VueRouter from 'vue-router';
+import App from './App.vue';
+import QuestionPage from './components/Global/Pages/QuestionPage.vue'
+import ResultPage from './components/Global/Pages/ResultPage.vue';
 
-createApp(App).mount('#app')
+Vue.use(VueRouter);
+
+const routes = [
+  { path: '/', component: QuestionPage },
+  { path: '/result', component: ResultPage },
+];
+
+const router = new VueRouter({
+  routes,
+});
+
+new Vue({
+  router,
+  render: (h) => h(App),
+}).$mount('#app');

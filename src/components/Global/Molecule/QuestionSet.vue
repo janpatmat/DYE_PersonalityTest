@@ -43,6 +43,10 @@
     </div>
     <div class="container__indicator">
       <h3>Never</h3>
+      <!-- <h3>Very Rarely</h3>
+      <h3>Rarely</h3>
+      <h3>Frequently</h3>
+      <h3>Very Frequently</h3> -->
       <h3>Always</h3>
     </div>
   </div>
